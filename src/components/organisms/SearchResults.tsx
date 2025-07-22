@@ -192,9 +192,6 @@ const SearchResults: React.FC<SearchResultsProps> = ({ results, isLoading, searc
           <Typography variant="h2" className="text-2xl font-bold text-gray-800 mb-2">
             Search Results
           </Typography>
-          <Typography variant="body" className="text-gray-600">
-            Found {sortedResults.length} properties
-          </Typography>
         </div>
 
         {/* Sort Options */}
