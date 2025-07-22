@@ -159,7 +159,7 @@ const JackstayLandingPage: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 text-center text-white">
+        <div className="relative z-10  mx-auto px-6 text-center text-white">
           <div className="mb-8">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full border border-white/30 mb-6">
               <span className="text-sm font-medium">🚀 Trusted by 45,000+ Travel Agents</span>
@@ -363,7 +363,7 @@ const JackstayLandingPage: React.FC = () => {
 
       {/* Features Section */}
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full text-sm font-medium mb-6">
               ✨ Premium Features
@@ -398,7 +398,7 @@ const JackstayLandingPage: React.FC = () => {
 
       {/* Brands Section */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full text-sm font-medium mb-6">
               🏨 Our Brands
@@ -433,7 +433,7 @@ const JackstayLandingPage: React.FC = () => {
 
       {/* How it Works */}
       <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-50">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full text-sm font-medium mb-6">
               🚀 How It Works
@@ -491,7 +491,7 @@ const JackstayLandingPage: React.FC = () => {
 
       {/* Testimonials */}
       <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className=" mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-500 to-cyan-600 text-white rounded-full text-sm font-medium mb-6">
               ❤️ Success Stories
