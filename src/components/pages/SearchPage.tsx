@@ -5,8 +5,14 @@ import Typography from '../atoms/Typography';
 import Button from '../atoms/Button';
 import Header from '../organisms/Header';
 import SearchForm from '../organisms/SearchForm';
+import PopularCities from '../molecules/PopularCities';
 
 const SearchPage: React.FC = () => {
+  const handleCitySelect = (city: string) => {
+    // The SearchForm component now handles the redirect automatically
+    console.log('City selected:', city);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50">
       <Header title="Jackstay" />
@@ -14,7 +20,7 @@ const SearchPage: React.FC = () => {
       <div className="pt-20">
         {/* Hero Section */}
         <div className="bg-gradient-to-br from-blue-600 via-blue-700 to-slate-800 text-white py-16">
-          <div className="max-w-7xl mx-auto px-6">
+          <div className=" mx-auto px-6">
             <div className=" mb-8">
               <Typography variant="h1" className="text-4xl md:text-5xl font-bold mb-4 text-white">
                 Find Your Perfect Stay
@@ -25,14 +31,21 @@ const SearchPage: React.FC = () => {
             </div>
             
             {/* Search Form */}
-            <div className="max-w-7xl mx-auto">
-              <SearchForm onSearch={() => {}} />
+            <div className=" mx-auto">
+              <SearchForm 
+                onSearch={() => {}} 
+              />
             </div>
           </div>
         </div>
 
+        {/* Popular Cities Section */}
+        <div className=" mx-auto px-6">
+          <PopularCities onCitySelect={handleCitySelect} />
+        </div>
+
         {/* Features Section */}
-        <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className=" mx-auto px-6 py-16">
           <div className="text-center mb-12">
             <Typography variant="h2" className="text-3xl font-bold text-gray-800 mb-4">
               Why Choose Jackstay?
