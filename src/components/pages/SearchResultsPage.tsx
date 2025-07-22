@@ -28,6 +28,7 @@ const SearchResultsPage: React.FC = () => {
   const [searchPerformed, setSearchPerformed] = useState(false);
 
   // Get search parameters from URL
+  const cityId = searchParams.get('cityId') || '';
   const city = searchParams.get('city') || '';
   const checkIn = searchParams.get('checkIn') || '';
   const checkOut = searchParams.get('checkOut') || '';
@@ -36,7 +37,7 @@ const SearchResultsPage: React.FC = () => {
   const rooms = searchParams.get('rooms') || '1';
 
   // Mock search results based on search criteria
-  const getMockResults = (searchCity: string): SearchResult[] => {
+  const getMockResults = (searchCityId: string, searchCity: string): SearchResult[] => {
     const baseResults = [
       {
         id: 1,
@@ -163,7 +164,7 @@ const SearchResultsPage: React.FC = () => {
 
     const types = ["Hotel", "Resort", "Lodge", "Guest House", "Inn", "Suites"];
 
-    for (let i = 7; i <= 60000; i++) {
+    for (let i = 7; i <= 60; i++) {
       const randomName = hotelNames[Math.floor(Math.random() * hotelNames.length)];
       const randomAmenities = amenitiesList[Math.floor(Math.random() * amenitiesList.length)];
       const randomImage = images[Math.floor(Math.random() * images.length)];
@@ -193,6 +194,9 @@ const SearchResultsPage: React.FC = () => {
 
     // Filter results based on search criteria
     return allResults.filter(result => {
+      if (searchCityId && !result.location.toLowerCase().includes(searchCityId.toLowerCase())) {
+        return false;
+      }
       if (searchCity && !result.location.toLowerCase().includes(searchCity.toLowerCase())) {
         return false;
       }
@@ -201,18 +205,18 @@ const SearchResultsPage: React.FC = () => {
   };
 
   useEffect(() => {
-    if (city || checkIn || checkOut) {
+    if (cityId || city || checkIn || checkOut) {
       setIsLoading(true);
       setSearchPerformed(true);
       
       // Simulate API call
       setTimeout(() => {
-        const results = getMockResults(city);
+        const results = getMockResults(cityId, city);
         setSearchResults(results);
         setIsLoading(false);
       }, 1500);
     }
-  }, [city, checkIn, checkOut, adults, children, rooms]);
+  }, [cityId, city, checkIn, checkOut, adults, children, rooms]);
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -221,7 +225,7 @@ const SearchResultsPage: React.FC = () => {
       <div className="pt-20">
         {/* Search Summary */}
         <div className="bg-white border-b border-gray-200">
-          <div className="max-w-7xl mx-auto px-6 py-4">
+          <div className=" mx-auto px-6 py-4">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
               <div>
                 <Typography variant="h2" className="text-2xl font-bold text-gray-800 mb-2">
@@ -229,7 +233,7 @@ const SearchResultsPage: React.FC = () => {
                 </Typography>
                 {city && (
                   <Typography variant="body" className="text-gray-600">
-                    Hotels in {city} • {checkIn && checkOut ? `${checkIn} - ${checkOut}` : 'Any dates'} • {adults} Adults, {children} Children, {rooms} Room{rooms !== '1' ? 's' : ''}
+                    Hotels in {city} {cityId && `(${cityId})`} • {checkIn && checkOut ? `${checkIn} - ${checkOut}` : 'Any dates'} • {adults} Adults, {children} Children, {rooms} Room{rooms !== '1' ? 's' : ''}
                   </Typography>
                 )}
               </div>
@@ -248,7 +252,7 @@ const SearchResultsPage: React.FC = () => {
         </div>
 
         {/* Search Results */}
-        <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className=" mx-auto px-6 py-8">
           <SearchResults 
             results={searchResults} 
             isLoading={isLoading}
@@ -258,7 +262,7 @@ const SearchResultsPage: React.FC = () => {
 
         {/* No Search Performed */}
         {!searchPerformed && (
-          <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className=" mx-auto px-6 py-16">
             <div className="text-center">
               <div className="w-24 h-24 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-6">
                 <span className="text-3xl">🔍</span>
