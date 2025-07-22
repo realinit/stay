@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = ({
       {/* Background with gradient and blur effect */}
       <div className="absolute inset-0 bg-white/80 backdrop-blur-md border-b border-white/20"></div>
       
-      <div className="relative max-w-7xl mx-auto px-6 py-4">
+      <div className="relative  mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo/Brand */}
           <div className="flex items-center">
