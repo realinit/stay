@@ -281,7 +281,7 @@ const HotelDetailPage: React.FC<HotelDetailPageProps> = ({ hotelId }) => {
       <div className="min-h-screen bg-gray-50">
         <Header title="Jackstay" />
         <div className="pt-20">
-          <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className=" mx-auto px-6 py-16">
             <div className="text-center">
               <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mb-4"></div>
               <Typography variant="h3" className="text-xl font-semibold text-gray-800">
@@ -299,7 +299,7 @@ const HotelDetailPage: React.FC<HotelDetailPageProps> = ({ hotelId }) => {
       <div className="min-h-screen bg-gray-50">
         <Header title="Jackstay" />
         <div className="pt-20">
-          <div className="max-w-7xl mx-auto px-6 py-16">
+          <div className=" mx-auto px-6 py-16">
             <div className="text-center">
               <Typography variant="h3" className="text-xl font-semibold text-gray-800 mb-4">
                 Hotel not found
@@ -319,7 +319,7 @@ const HotelDetailPage: React.FC<HotelDetailPageProps> = ({ hotelId }) => {
       <Header title="Jackstay" />
       
       <div className="pt-20">
-        <div className="max-w-7xl mx-auto px-6 py-8">
+        <div className=" mx-auto px-6 py-8">
           {/* Hotel Header */}
           <div className="bg-white rounded-xl shadow-lg p-6 mb-8">
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
